@@ -1,12 +1,35 @@
 extends layout
-	div#fh5co-about
-	div(data-section="about")
-				div.fh5co-2col fh5co-bg to-animate-2
-				div(style="background-image: url(images/res_img_1.jpg)")
-				div.fh5co-2col fh5co-text
-					h2.heading to-animate #{headingAbout}
-					p.to-animate
-					span.firstcharacter F</span>ar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.</p>
-					p .text-center to-animate"
-					a href="#"
-					p.btn btn-primary btn-outline (Get in touch)
+
+	#fh5co-about(data-section='about')
+	.fh5co-2col.fh5co-bg.to-animate-2(style='background-image: url(images/res_img_1.jpg)')
+	.fh5co-2col.fh5co-text
+		h2.heading.to-animate About Us
+		p.to-animate
+		span.firstcharacter F
+		| ar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.
+		p.text-center.to-animate
+		a.btn.btn-primary.btn-outline(href='#') Get in touch
+	#fh5co-sayings
+	.container
+		.row.to-animate
+		.flexslider
+			ul.slides
+			li
+				blockquote
+				p
+					| &ldquo;Cooking is an art, but all art requires knowing something about the techniques and materials&rdquo;
+				p.quote-author &mdash; Nathan Myhrvold
+			li
+				blockquote
+				p
+					| &ldquo;Give a man food, and he can eat for a day. Give a man a job, and he can only eat for 30 minutes on break.&rdquo;
+				p.quote-author &mdash; Lev L. Spiro
+			li
+				blockquote
+				p &ldquo;Find something you&rsquo;re passionate about and keep tremendously interested in it.&rdquo;
+				p.quote-author &mdash; Julia Child
+			li
+				blockquote
+				p
+					| &ldquo;Never work before breakfast; if you have to work before breakfast, eat your breakfast first.&rdquo;
+				p.quote-author &mdash; Josh Billings
