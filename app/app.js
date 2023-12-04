@@ -1,6 +1,4 @@
-//use pug templating engine
-app.set('view engine', 'pug');
-app.set('views', './app/views');
+
 
 // Import express.js
 const express = require("express");
@@ -10,6 +8,10 @@ var app = express();
 
 // Add static files location
 app.use(express.static("static"));
+
+//use pug templating engine
+app.set('view engine', 'pug');
+app.set('views', './app/views');
 
 // Get the functions in the db.js file to use
 const db = require('./services/db');
