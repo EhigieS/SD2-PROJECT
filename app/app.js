@@ -18,9 +18,8 @@ const db = require('./services/db');
 
 // Create a route for root - /
 app.get("/", function(req, res) {
-    //res.render("about", {'headingAbout':'About Us'});
-    res.render("events", {'EventHeading':'Upcoming Events', 'heading1':'Kitchen Workshops', 'heading2':'Music Concert', 'heading3':'Free to Eat Party'});
-    //res.render("menu", {'HeadingDrinks':'The Drinks', 'HeadingMenu':'Our Menu', 'HeadingDrinks':'Food Fiesta'});
+    res.render("about", {'headingAbout':'About Us'});
+    
 });
 
 // Create a route for testing the db
