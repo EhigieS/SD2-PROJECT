@@ -22,7 +22,7 @@ app.set('js', './js');
 const db = require('./services/db');
 
 // Create a route for home - /
-app.get("/index", function(req, res) {
+app.get("/", function(req, res) {
    res.render("index"); 
 });
 
@@ -51,10 +51,10 @@ app.get("/events", function(req, res) {
     res.render('menu');
   });
 
- // contact us page
- app.get('/contact_us', (req, res) => {
-  res.render('contact_us');
-}); 
+// contact us page
+app.get('/contact', (req, res) => {
+  res.render('contact');
+});
 
  // Handling table booking form submission
 app.post('/book-table', (req, res) => {
