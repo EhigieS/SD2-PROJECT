@@ -1,3 +1,7 @@
+nav
+{
+  display:flex;
+}
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon/icomoon.eot?srf3rx");
@@ -17,18 +21,19 @@ body.fh5co-overflow {
 }
 
 a {
-  color: #fb6e14;
+  color: dodgerblue;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 a:hover, a:focus, a:active {
-  color: #bf4c03;
+  color: darkblue;
+  text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", serif;
-  color: #000;
+  color: dodgerblue;
 }
 
 p {

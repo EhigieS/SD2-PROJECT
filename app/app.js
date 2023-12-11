@@ -5,15 +5,18 @@ const express = require("express");
 const bodyParser = require('body-parser');
 // Create express app
 var app = express();
+//var express = require('express');
 
 // Add static files location
 app.use(express.static("static"));
+app.use(express.static('app'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 //use pug templating engine
 app.set('view engine', 'pug');
 app.set('views', './app/views');
-app.set('stylesheet', '/css');
+app.set('css', './css');
+app.set('js', './js');
 
 // Get the functions in the db.js file to use
 const db = require('./services/db');
