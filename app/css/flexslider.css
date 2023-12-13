@@ -45,8 +45,12 @@
   padding: 0;
 }
 .flexslider .slides > li {
-  display: none;
+  display: block;
   -webkit-backface-visibility: hidden;
+}
+.flexslider .about .slides img {
+  width: 100%;
+  display: block;
 }
 .flexslider .slides img {
   width: 100%;
@@ -75,7 +79,7 @@ html[xmlns] .flexslider .slides {
 .flexslider {
   margin: 0 0 60px;
   background: #ffffff;
-  border: 4px solid #ffffff;
+ /* border: 4px solid #ffffff;*/
   position: relative;
   zoom: 1;
   -webkit-border-radius: 4px;

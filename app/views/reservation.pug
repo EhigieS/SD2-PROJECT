@@ -1,57 +1,57 @@
 extends layout 
 block content 
-  section
-    h2 Book a Table or Room
-    p Choose from our available options below:
-
-  section
-    h3 Book a Table
-    form(action="/book-table" method="post")
-      label(for="cust_name") Name:
-      input(type="text", name="cust_name", id="cust_name", required)
-      label(for="tableType") Table Type:
-      select(name="tableType", id="tableType", required)
-        option(value="family") Family
-        option(value="couples") Couples
-        option(value="custom") Custom
-      label(for="Email") Email:
-      input(type="email", name="Email", id="Email", required)
-
-      label(for="numPeople") Number of People:
-      input(type="number", name="numPeople", id="numPeople", min="1", required)
-
-      label(for="date") Date:
-      input(type="date", name="date", id="date", required)
-
-      label(for="message") Message:
-      input(type="textArea", name="message", id="message", required)
-      button(type="submit") Book Table
-
-  section
-    h3 Book a Room
-    form(action="/book-room" method="post")
-      label(for="cust_name") Name:
-      input(type="text", name="cust_name", id="cust_name", required)
-
-      label(for="Email") Email:
-      input(type="email", name="Email", id="Email", required)
-
-      label(for="roomType") Room Type:
-      select(name="roomType", id="roomType", required)
-        option(value="single") Single Room
-        option(value="double") Double Room
-        option(value="suite") Suite
-
-      label(for="numNights") Number of Nights:
-      input(type="number", name="numNights", id="numNights", min="1", required)
-
-      label(for="custNumb") Contact Number:
-      input(type="number", name="custNumb", id="custNumb", min="11" , required)
-
-      label(for="checkin") Check-in Date:
-      input(type="date", name="checkin", id="checkin", required)
-
-      label(for="message") Message:
-      input(type="textArea", name="message", id="message", required)
-
-      button(type="submit") Book Room
+    #fh5co-contact(data-section="reservation")
+        .container
+            .row.text-center.fh5co-heading.row-padded
+            .col-md-8.col-md-offset-2
+                h2.heading.to-animate Booking
+                p.sub-heading.to-animate Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+            
+            .col-md-6.to-animate-2
+                h3 Table Reservation
+                form(action="/book-table", method="post") 
+                    .form-group
+                    label(for="cust_name" class="sr-only") Name
+                    input#name.form-control(placeholder="Name", type="text")
+                    .form-group
+                    label(for="email" class="sr-only") Email
+                    input#email.form-control(placeholder="Email", type="email")
+                    .form-group
+                    label(for="occasion" class="sr-only") Occasion
+                    select.form-control#occation
+                        option Select an Occasion
+                        option Couples
+                        option Family
+                        option Custom
+                    .form-group
+                    label(for="date" class="sr-only") Date
+                    input#date.form-control(placeholder="Date & Time", type="date")
+                    .form-group
+                    label(for="message" class="sr-only") Message
+                    textarea#message.form-control(placeholder="Message", cols="30", rows="5")
+                    .form-group
+                    input.btn.btn-primary(value="Send Message", type="submit")
+            .col-md-6.to-animate-2
+                h3 Room Reservation
+                form(action="/book-room", method="post") 
+                    .form-group
+                    label(for="name" class="sr-only") Name
+                    input#name.form-control(placeholder="Name", type="text")
+                    .form-group
+                    label(for="email" class="sr-only") Email
+                    input#email.form-control(placeholder="Email", type="email")
+                    .form-group
+                    label(for="room" class="sr-only") Room
+                    select.form-control#room
+                        option Select a Room
+                        option Single Bed
+                        option Double Bed
+                        option Suite
+                    .form-group
+                    label(for="date" class="sr-only") Date
+                    input#date.form-control(placeholder="Date & Time", type="date")
+                    .form-group
+                    label(for="message" class="sr-only") Message
+                    textarea#message.form-control(placeholder="Message", cols="30", rows="5")
+                    .form-group
+                    input.btn.btn-primary(value="Send Message", type="submit")

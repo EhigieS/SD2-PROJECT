@@ -1,0 +1,57 @@
+extends layout 
+block content 
+  section
+    h2 Book a Table or Room
+    p Choose from our available options below:
+
+  section
+    h3 Book a Table
+    form(action="/book-table" method="post")
+      label(for="cust_name") Name:
+      input(type="text", name="cust_name", id="cust_name", required)
+      label(for="tableType") Table Type:
+      select(name="tableType", id="tableType", required)
+        option(value="family") Family
+        option(value="couples") Couples
+        option(value="custom") Custom
+      label(for="Email") Email:
+      input(type="email", name="Email", id="Email", required)
+
+      label(for="numPeople") Number of People:
+      input(type="number", name="numPeople", id="numPeople", min="1", required)
+
+      label(for="date") Date:
+      input(type="date", name="date", id="date", required)
+
+      label(for="message") Message:
+      input(type="textArea", name="message", id="message", required)
+      button(type="submit") Book Table
+
+  section
+    h3 Book a Room
+    form(action="/book-room" method="post")
+      label(for="cust_name") Name:
+      input(type="text", name="cust_name", id="cust_name", required)
+
+      label(for="Email") Email:
+      input(type="email", name="Email", id="Email", required)
+
+      label(for="roomType") Room Type:
+      select(name="roomType", id="roomType", required)
+        option(value="single") Single Room
+        option(value="double") Double Room
+        option(value="suite") Suite
+
+      label(for="numNights") Number of Nights:
+      input(type="number", name="numNights", id="numNights", min="1", required)
+
+      label(for="custNumb") Contact Number:
+      input(type="number", name="custNumb", id="custNumb", min="11" , required)
+
+      label(for="checkin") Check-in Date:
+      input(type="date", name="checkin", id="checkin", required)
+
+      label(for="message") Message:
+      input(type="textArea", name="message", id="message", required)
+
+      button(type="submit") Book Room

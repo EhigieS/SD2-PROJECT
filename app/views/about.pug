@@ -1,16 +1,38 @@
 extends layout
 block content
-	section
-		h2 About Us
-		p
-			| Welcome to our company's About page. Learn more about who we are, our vision, and our mission.
-		
-	section
-		h3 Vision
-		p
-		| Our vision is to [...]. Add a description of your company's vision here.
+	#fh5co-about(data-section="about")
+		.fh5co-2col.fh5co-bg.to-animate-2
+			.flexslider
+				ul.about.slides
+					li
+						img(src="/images/about1.jpg", alt='Slider Image 1')
+					li
+						img(src="/images/about2.jpg", alt='Slider Image 2')
+					li
+						img(src="/images/about3.jpg", alt='Slider Image 3')
+					li
+						img(src="/images/about4.jpg", alt='Slider Image 3')
+			
+		.fh5co-2col.fh5co-text
+			h2.heading.to-animate About Us
+			p.to-animate
+			span.firstcharacter
+			h2 1920s - The Birth of Elegance:
+			p In the heart of an enchanting land, where rolling hills meet the whispers of ancient forests, Blue Mist Hotel and Restaurants emerged as a haven for those seeking respite from the bustling world. Founded in the early 20th century by visionary entrepreneurs, the establishment quickly became a symbol of luxury and tranquility. Blue Mist started as a modest inn, offering weary travelers a warm fireplace, hearty meals, and a glimpse into the charm of a bygone era. The founders, inspired by the misty mornings that blanketed the landscape, named it "Blue Mist" to capture the essence of mystery and allure.
 
-	section
-		h3 Mission
-		p
-		| Our mission is to [...]. Add a description of your company's mission here.
+			//h2 1950s - Culinary Renaissance:
+			//p The hotel's culinary prowess flourished during the mid-century, attracting renowned chefs who transformed the restaurant into a gastronomic haven. The blend of local flavors and international influences became the hallmark of Blue Mist's dining experience, drawing food enthusiasts from far and wide.
+
+			//h2 1980s - Expansion and Modernization:
+			//p Blue Mist underwent a significant expansion, adding modern amenities while preserving its historical charm. The hotel became a sought-after destination for events, weddings, and corporate retreats. The iconic blue façade stood as a beacon of elegance amid the evolving hospitality landscape.
+
+			//h2 2000s - Sustainable Oasis:
+			//p In response to the call for environmental responsibility, Blue Mist embraced sustainable practices. The surrounding landscape became a botanical wonder, with lush gardens and eco-friendly initiatives that garnered recognition for the hotel's commitment to preserving nature.
+
+			h2 Present - Timeless Excellence:
+			p Today, Blue Mist Hotel and Restaurants stands as a testament to timeless excellence. With its rich history, culinary mastery, and commitment to sustainability, it continues to enchant guests, offering an immersive experience that transcends generations.
+			h2 Mission and Vision
+			p At Blue Mist Hotels and Restaurants, our mission is to create unforgettable experiences by providing exceptional hospitality and culinary delights. | Our vision at Blue Mist Hotels and Restaurants is to be recognized as a premier destination for luxury accommodation and dining.
+			p.text-center.to-animate
+			a.btn.btn-primary.btn-outline(href="contact") Get in touch
+			a.btn.btn-primary.btn-outline(href="roomsanddining" style="float:right;") Head to Reservation

@@ -68,21 +68,27 @@ p {
 }
 
 .btn-primary {
-  background: #fb6e14;
-  color: #fff;
-  border: 2px solid #fb6e14;
+  background: white;
+  color: dodgerblue;
+  border: 2px solid dodgerblue;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background: #f16104 !important;
-  border-color: #f16104 !important;
+  background: dodgerblue !important;
+  border-color: darkblue !important;
 }
 .btn-primary.btn-outline {
   background: transparent;
-  color: #fb6e14;
-  border: 2px solid #fb6e14;
+  color: dodgerblue;
+  border: 2px solid dodgerblue;
 }
+
+.btn-primary.btn-outline:hover{
+  background: dodgerblue;
+  color: #fff;
+}
+
 .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
-  background: #fb6e14;
+  background: dodgerblue;
   color: #fff;
 }
 
@@ -187,7 +193,7 @@ p {
 .form-control:active, .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #fb6e14;
+  border-color: dodgerblue;
 }
 
 /*
@@ -421,7 +427,7 @@ p {
 }
 #fh5co-about .fh5co-text .heading {
   margin-bottom: 30px;
-  color: #fff;
+  color: dodgerblue;
   font-style: italic;
   font-weight: 300;
   position: relative;
@@ -435,12 +441,12 @@ p {
   width: 40px;
   height: 2px;
   left: 50%;
-  background: #fb6e14;
+  background: white;
   margin-left: -20px;
 }
 #fh5co-about .fh5co-text p {
   line-height: 2;
-  color: #a99c92;
+  color: #ffffff;
 }
 #fh5co-about .fh5co-text p span.firstcharacter {
   float: left;
@@ -471,6 +477,12 @@ p {
     width: 100%;
     min-height: 300px;
   }
+}
+.fh5co-food-menu .to-animate-2 h2 .fh5co-dishes .roomdining p{
+  text-align: right;
+}
+#fh5co-menus .fh5co-food-desc .slides li{
+  display: block;
 }
 
 #fh5co-sayings {
@@ -900,7 +912,7 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.7);
   z-index: 9;
 }
 #fh5co-events > .container {

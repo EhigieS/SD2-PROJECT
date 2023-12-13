@@ -1,3 +1,111 @@
 extends layout
 block content 
-    
+    #fh5co-menus(data-section='roomsanddining')
+        .container
+            .row.text-center.fh5co-heading.row-padded
+            .col-md-8.col-md-offset-2
+                h1.heading.to-animate.text-center Rooms and Dining
+            .row.row-padded
+            .col-md-6
+                .fh5co-food-menu.to-animate-2
+                h2.fh5co-drinks Rooms
+                p.sub-heading.to-animate
+                    p Book a room and experience comfort like never before. Choose from our luxurious single, double, or suite rooms.
+                ul
+                    li
+                    .fh5co-food-desc
+                        .flexslider
+                            ul.slides
+                             li
+                                img(src="/images/single1.jpg", alt='Slider Image 1')
+                             li
+                                 img(src="/images/single2.jpg", alt='Slider Image 2')
+                             li
+                                img(src="/images/single3.jpg", alt='Slider Image 3')
+                        div
+                        h3 Single Room
+                        p Experience comfort and tranquility in our Single Room.Perfect for solo travelers or those seeking a cozy space, our Single Room offers a peaceful retreat.
+                    .fh5co-food-pricing
+                        | £ 59.95 /Night
+                    li
+                    .fh5co-food-desc
+                        .flexslider
+                           ul.slides
+                             li
+                                img(src="/images/double1.jpg", alt='Slider Image 1')
+                             li
+                                 img(src="/images/double2.jpg", alt='Slider Image 2')
+                             li
+                                img(src="/images/double3.jpg", alt='Slider Image 3')
+                        div
+                        h3 Double Room
+                        p Our Double Room is designed for comfort and relaxation. Ideal for couples or travelers looking for a bit more space offering a welcoming atmosphere.
+                    .fh5co-food-pricing
+                        |£ 64.55 /Night 
+                    li
+                    .fh5co-food-desc
+                        .flexslider
+                           ul.slides
+                             li
+                                img(src="/images/suite1.jpg", alt='Slider Image 1')
+                             li
+                                 img(src="/images/suite2.jpg", alt='Slider Image 2')
+                             li
+                                img(src="/images/suite3.jpg", alt='Slider Image 3')
+                        div
+                        h3 Suite
+                        p Designed with the utmost comfort in mind, the Suite offers a spacious and elegant retreat for those seeking a premium experience, with a separate living area and well-appointed amenities.
+                    .fh5co-food-pricing
+                        | £ 110 /Night
+        
+            .col-md-6
+                .fh5co-food-menu.to-animate-2
+                h2.fh5co-dishes Dining
+                p.sub-heading.to-animate
+                    p.roomdining Reserve a table for an exquisite dining experience. Enjoy our delicious menu in a cozy and inviting atmosphere.
+                ul
+                    li
+                    .fh5co-food-desc
+                        .flexslider
+                           ul.slides
+                             li
+                                img(src="/images/couple2.jpg", alt='Slider Image 1')
+                             li
+                                 img(src="/images/couple1.jpg", alt='Slider Image 2')
+                        div
+                        h3 Couples
+                        p Our couples' table offers a private retreat where love blossoms over delectable dishes and served with finesse. While each culinary creation is designed to complement the enchanting atmosphere.
+                    .fh5co-food-pricing
+                        | £10.99
+                    li
+                    .fh5co-food-desc
+                        .flexslider
+                           ul.slides
+                             li
+                                img(src="/images/dining4.jpeg", alt='Slider Image 1' style ="width:822px;")
+                             li
+                                 img(src="/images/dining5.jpg", alt='Slider Image 2' style ="width:822px;")
+                        div
+                        h3 Family
+                        p The family table is thoughtfully set to accommodate the entire family, providing a comfortable and welcoming environment for sharing laughter, stories, and, of course, delicious meals.
+                    .fh5co-food-pricing
+                        | £14.50
+                    li
+                    .fh5co-food-desc
+                        .flexslider
+                           ul.slides
+                             li
+                                 img(src="/images/dining2-2.jpg", alt='Slider Image 2' style ="width:582px;")
+                             li
+                                img(src="/images/dining2.avif", alt='Slider Image 3' style ="width:582px;")
+                        div
+                        h3 Custom
+                        p Whether you're hosting a glamorous wedding reception, a corporate gala, or an intimate family celebration, our custom tables are tailored to match the distinctiveness of your event.
+                    .fh5co-food-pricing
+                        | £ - It varies
+        
+            .row
+            .col-md-4.col-md-offset-4.text-center.to-animate-2
+                p
+                a.btn.btn-primary.btn-outline(href='reservation') Book Now
+        

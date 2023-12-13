@@ -60,7 +60,7 @@ app.get('/contact', (req, res) => {
 app.post('/book-table', (req, res) => {
   const { tableType, numPeople, date, cust_name, cust_email, message } = req.body;
   // Handle table booking data
-  res.send(`Table booked: Type - ${tableType}, People - ${numPeople}, Date - ${date}, cust_name - ${cust_name}, Email - ${cust_email}, message - ${message}`);
+  res.send(`Table booked: occasion - ${tableType}, date - ${date}, cust_name - ${cust_name}, email - ${cust_email}, message - ${message}`);
 });
 
 // Handling room booking form submission
