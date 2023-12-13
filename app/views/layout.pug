@@ -19,6 +19,13 @@ html
     link(rel="stylesheet", href="/css/bootstrap-datetimepicker.min.css")
     link(rel="stylesheet", href="/css/flexslider.css")
     link(rel="stylesheet", href="/css/bootstrap.css")
+    script.
+        $(document).ready(function(){
+          $('form').submit(function() {
+              console.log('Form submitted!');
+              // Additional logging or handling code
+          });
+        });
     // jQuery
     script(src="/js/jquery.min.js")
 
