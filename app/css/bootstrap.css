@@ -4655,7 +4655,7 @@ tbody.collapse.in {
 .navbar {
   position: relative;
   min-height: 55px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   border: 1px solid transparent;
 }
 .navbar:before, .navbar:after {
@@ -5092,29 +5092,29 @@ tbody.collapse.in {
 }
 
 .navbar-inverse {
-  background-color: #222;
-  border-color: #090909;
+  background-color: white;
+  border-color: dodgerblue;
 }
 .navbar-inverse .navbar-brand {
-  color: #9d9d9d;
+  color: dodgerblue;
 }
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
-  color: #fff;
+  color:dodgerblue;
   background-color: transparent;
 }
 .navbar-inverse .navbar-text {
   color: #9d9d9d;
 }
-.navbar-inverse .navbar-nav > li > a {
-  color: #9d9d9d;
-}
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-  color: #fff;
+/*.navbar-inverse .navbar-nav > li > a {
+  color: dodgerblue;
+}*/
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: darkblue;
   background-color: transparent;
 }
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active {
   color: #fff;
-  background-color: #090909;
+  background-color: dodgerblue;
 }
 .navbar-inverse .navbar-nav > .disabled > a, .navbar-inverse .navbar-nav > .disabled > a:hover, .navbar-inverse .navbar-nav > .disabled > a:focus {
   color: #444;

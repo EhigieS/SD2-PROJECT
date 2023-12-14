@@ -1,7 +1,10 @@
-html
-
+html(lang="en")
   head
-    meta(charset='utf-8')
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    //link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js")
     // Facebook and Twitter integration
     meta(property='og:title' content='')
     meta(property='og:image' content='')
@@ -85,27 +88,35 @@ html
             li(style='background-image: url(/images/slide_1.jpg);' data-stellar-background-ratio='0.5')
             li(style='background-image: url(/images/slide_2.jpg);' data-stellar-background-ratio='0.5')
             li(style='background-image: url(/images/slide_3.jpg);' data-stellar-background-ratio='0.5')
-    .js-sticky
-        .fh5co-main-nav
+    nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href='/') Blue Mist
+          ul.nav.navbar-nav
+            li
+              a(href='/' data-nav-section='index') Home
+            li
+              a(href='about' data-nav-section='about') About
+            li
+              a(href='menu' data-nav-section='menu') Menu
+            li
+              a(href='events' data-nav-section='events') Events 
+            li
+              a(href='roomsanddining' data-nav-section='roomsanddining') Rooms and Dining
+            li
+              a(href='contact' data-nav-section='contact') Contact Us
+    //.js-sticky
+      .fh5co-main-nav
         .container-fluid
-            .fh5co-menu-1
-              ul 
-                li 
-                  a(href='/' data-nav-section='index') Home
-                li 
-                  a(href='about' data-nav-section='about') About
-                li 
-                  a(href='menu' data-nav-section='menu') Menu
-            .fh5co-logo
+          .fh5co-menu-1 
+            a(href='/' data-nav-section='index') Home
+            a(href='about' data-nav-section='about') About
+            a(href='menu' data-nav-section='menu') Menu
+          .fh5co-logo
             a(href='/') Blue Mist
-             // img(src = '/bluemistlogo02.png')
-            .fh5co-menu-2
-              ul
-                li 
-                  a(href='events' data-nav-section='events') Events
-                li 
-                  a(href='roomsanddining' data-nav-section='roomsanddining') Rooms and Dining
-                li 
-                  a(href='contact' data-nav-section='contact') Contact Us
+          .fh5co-menu-2
+            a(href='events' data-nav-section='events') Events
+            a(href='roomsanddining' data-nav-section='roomsanddining') Rooms and Dining
+            a(href='contact' data-nav-section='contact') Contact Us
   body 
       block content 

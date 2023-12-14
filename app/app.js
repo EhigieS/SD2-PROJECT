@@ -73,14 +73,22 @@ app.post('/book-table', async (req, res) => {
 
 // Handling room booking form submission
 app.post('/book-room', async (req, res) => {
-  const { roomType, numNights, checkin, cust_name, cust_email, message } = req.body;
+  console.log('Received room booking request:', req.body);
+  const { name, email, date, numNights, RoomType, message } = req.body;
+
+  if (!name || !email || !date || !numNights || !RoomType || !message) {
+    console.error('Incomplete room booking request. Missing required parameters.');
+    res.status(400).send('Incomplete room booking request. Missing required parameters.');
+    return;
+  }
 
   try {
-    await bookingModel.bookRoom(roomType, numNights, checkin, cust_name, cust_email, message);
+    await bookingModel.bookRoom(name, email, date, numNights, RoomType, message);
+    console.log('Room booked successfully!');
     res.send('Room booked successfully!');
   } catch (error) {
-    console.error(error);
-    res.status(500).send('Error booking room');
+    console.error('Error booking room:', error);
+    res.status(500).send(`Error booking room: ${error.message}`);
   }
 });
 

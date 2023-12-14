@@ -26,9 +26,10 @@ a {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
-a:hover, a:focus, a:active {
-  color: darkblue;
+.nav.navbar-nav > li > a > a:hover, a:focus, a:active {
+  color: white;
   text-decoration: none;
+  background-color: dodgerblue;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -332,7 +333,7 @@ p {
 .fh5co-main-nav .fh5co-menu-1 a.active,
 .fh5co-main-nav .fh5co-menu-2 a.active,
 .fh5co-main-nav .fh5co-logo a.active {
-  color: #fb6e14;
+  color: dodgerblue;
 }
 .fh5co-main-nav .fh5co-menu-1 {
   text-align: right;

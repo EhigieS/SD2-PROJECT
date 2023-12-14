@@ -12,11 +12,12 @@ const bookTable = async (name, email, date, occasion, message) => {
   }
 };
 
-const bookRoom = async (roomType, numNights, checkin, cust_name, cust_email, message) => {
-  const sql = 'INSERT INTO room_booking (roomType, numNights, checkin, cust_name, cust_email, message) VALUES (?, ?, ?, ?, ?, ?)';
+const bookRoom = async (name, email, date, numNights, RoomType, message ) => {
+  const sql = 'INSERT INTO room_booking (name, email, date, numNights, RoomType, message) VALUES (?, ?, ?, ?, ?, ?)';
+  console.log('SQL Query:', sql);
 
   try {
-    const result = await db.query(sql, [roomType, numNights, checkin, cust_name, cust_email, message]);
+    const result = await db.query(sql, [name, email, date, numNights, RoomType, message ]);
     return result;
   } catch (error) {
     throw error;
