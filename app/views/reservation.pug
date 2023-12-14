@@ -11,24 +11,24 @@ block content
                 h3 Table Reservation
                 form(action="/book-table", method="post") 
                     .form-group
-                        label(for="cust_name" class="sr-only") Name
-                        input#name.form-control(placeholder="Name", type="text")
+                        label(for="name" class="sr-only") Name
+                        input#name.form-control(placeholder="Name", type="text", name="name", required)
                     .form-group
                         label(for="email" class="sr-only") Email
-                        input#email.form-control(placeholder="Email", type="email")
+                        input#email.form-control(placeholder="Email", type="email", name="email", required)
                     .form-group
-                        label(for="occation" class="sr-only") Occasion
-                        select.form-control#occation
-                            option Select an Occasion
-                            option Couples
-                            option Family
-                            option Custom
+                        label(for="occasion" class="sr-only") Occasion
+                        select.form-control#occasion(name="occasion", required)
+                            option(value="" disabled selected) Select an Occasion
+                            option(value="Couples") Couples
+                            option(value="Family") Family
+                            option(value="Custom") Custom
                     .form-group
                         label(for="date" class="sr-only") Date
-                        input#date.form-control(placeholder="Date & Time", type="date")
+                        input#date.form-control(placeholder="Date & Time", type="date", name="date", required)
                     .form-group
                         label(for="message" class="sr-only") Message
-                        textarea#message.form-control(placeholder="Message", cols="30", rows="5")
+                        textarea#message.form-control(placeholder="Message", cols="30", rows="5", name="message", required)
                     .form-group
                         input.btn.btn-primary(value="Send Message", type="submit")
             .col-md-6.to-animate-2

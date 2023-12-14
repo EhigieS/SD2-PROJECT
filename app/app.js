@@ -3,6 +3,7 @@
 // Import express.js
 const express = require("express");
 const bodyParser = require('body-parser');
+const bookingModel = require('./models/bookingModel');
 // Create express app
 var app = express();
 //var express = require('express');
@@ -11,12 +12,12 @@ var app = express();
 app.use(express.static("static"));
 app.use(express.static('app'));
 
-app.use(bodyParser.urlencoded({ extended: true }));
 //use pug templating engine
 app.set('view engine', 'pug');
 app.set('views', './app/views');
 app.set('css', './css');
 app.set('js', './js');
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Get the functions in the db.js file to use
 const db = require('./services/db');
@@ -56,23 +57,37 @@ app.get('/contact', (req, res) => {
   res.render('contact');
 });
 
- // Handling table booking form submission
-app.post('/book-table', (req, res) => {
-  const { occation, date, cust_name, email, message } = req.body;
-  // Handle table booking data
-  res.send(`Table booked: occation - ${occation}, date - ${date}, cust_name - ${cust_name}, email - ${email}, message - ${message}`);
+// Handling table booking form submission
+app.post('/book-table', async (req, res) => {
+  console.log('Received table booking request:', req.body);
+
+  try {
+    await bookingModel.bookTable(req.body.name, req.body.email, req.body.date, req.body.occasion, req.body.message);
+    console.log('Table booked successfully!');
+    res.send('Table booked successfully!');
+  } catch (error) {
+    console.error('Error booking table:', error);
+    res.status(500).send(`Error booking table: ${error.message}`  );
+  }
 });
 
 // Handling room booking form submission
-app.post('/book-room', (req, res) => {
+app.post('/book-room', async (req, res) => {
   const { roomType, numNights, checkin, cust_name, cust_email, message } = req.body;
-  // Handle room booking data
-  res.send(`Room booked: Type - ${roomType}, Nights - ${numNights}, Check-in - ${checkin}, cust_name - ${cust_name}, Email - ${cust_email}, message - ${message}`);
+
+  try {
+    await bookingModel.bookRoom(roomType, numNights, checkin, cust_name, cust_email, message);
+    res.send('Room booked successfully!');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error booking room');
+  }
 });
+
 // Create a route for testing the db
 app.get("/hotel_restaurants", function(req, res) {
-    // Assumes a table called test_table exists in your database
-    sql = 'select * from hotel_restaurants';
+
+    sql = 'select * from table_booking';
     db.query(sql).then(results => {
         console.log(results);
         res.send(results)
