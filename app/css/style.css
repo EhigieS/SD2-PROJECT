@@ -946,10 +946,11 @@ p {
 }
 #fh5co-events .fh5co-event {
   background: #fff;
-  padding: 50px;
+  padding: 100px;
   text-align: center;
   margin-bottom: 30px;
   position: relative;
+  background-image: url(/images/group-chefs-working-kitchen.jpg)
 }
 #fh5co-events .fh5co-event:before {
   border: 2px solid #e6e6e6;

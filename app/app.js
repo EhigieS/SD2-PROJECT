@@ -47,9 +47,9 @@ app.get("/events", function(req, res) {
     res.render('reservation');
   });
  
-// menu page
- app.get('/menu', (req, res) => {
-    res.render('menu');
+// gallery page
+ app.get('/gallery', (req, res) => {
+    res.render('gallery');
   });
 
 // contact us page
@@ -86,6 +86,26 @@ app.post('/book-room', async (req, res) => {
     await bookingModel.bookRoom(name, email, date, numNights, RoomType, message);
     console.log('Room booked successfully!');
     res.send('Room booked successfully!');
+  } catch (error) {
+    console.error('Error booking room:', error);
+    res.status(500).send(`Error booking room: ${error.message}`);
+  }
+});
+
+app.post('/submit-contact', async (req, res) => {
+  console.log('Message send:', req.body);
+  const { name, email, message } = req.body;
+
+  if (!name || !email || !message) {
+    console.error('Incomplete message request. Missing required parameters.');
+    res.status(400).send('Incomplete message request. Missing required parameters.');
+    return;
+  }
+
+  try {
+    await bookingModel.sendMsg(name, email, message);
+    console.log('Message send successfully!');
+    res.send('Message send successfully!');
   } catch (error) {
     console.error('Error booking room:', error);
     res.status(500).send(`Error booking room: ${error.message}`);

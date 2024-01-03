@@ -1,22 +1,81 @@
-extends layout 
+extends layout
 block content
     #fh5co-contact(data-section="contact")
         .container
             .row
                 .col-md-6.to-animate-2
-                    h3 Contact Info
+                    h2 Contact Us
                     ul.fh5co-contact-info
-                    li.fh5co-contact-address
-                        i.icon-home
-                        | 5555 Love Paradise 56 New Clity 5655,
-                        br
-                        | Excel Tower United Kingdom
-                    li
-                        i.icon-phone
-                        | (123) 465-6789
-                    li
-                        i.icon-envelope
-                        | info@freehtml5.co
-                    li
-                        i.icon-globe
-                        a(href="http://freehtml5.co/" target="_blank") freehtml5.co
+                        li.fh5co-contact-address
+                            i.icon-home
+                            | 5555 Love Paradise 56 New City 5655,
+                            br
+                            | Excel Tower United Kingdom
+                        li
+                            i.icon-phone
+                            | (123) 465-6789
+                        li
+                            i.icon-envelope
+                            | contact@yourwebsite.com
+                        li
+                            i.icon-globe
+                            a(href="http://yourwebsite.com/" target="_blank") yourwebsite.com
+                    p
+                        | Feel free to reach out to us with any questions or concerns. We're here to help!
+
+                .col-md-6.to-animate-2
+                    img(src="/images/Asset1.png", alt="")
+            // You can add a contact form here if needed
+            // Example form:
+            form(action="/submit-contact" method="post")
+                .form-group
+                    label(for="name" class="sr-only") Name
+                    input#name.form-control(placeholder="Name", type="text", name="name", required)
+                .form-group
+                    label(for="email" class="sr-only") Email
+                    input#name.form-control(placeholder="Email", type="email", name="email", required)
+                .form-group
+                    label(for="message" class="sr-only") Message
+                    textarea#message.form-control(placeholder="Message", cols="30", rows="5", name="message", required)
+                .form-group
+                    input.btn.btn-primary(value="Send Message", type="submit")
+            // Add a hidden pop-up message
+            .popup-message#successPopup
+            // The pop-up content will be dynamically updated
+
+        //Add a script at the end of your pug file to handle the pop-up
+        script.
+            document.addEventListener('DOMContentLoaded', function() {
+                const form = document.getElementById('contactForm');
+                const popup = document.getElementById('successPopup');
+
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+
+                    // Use AJAX to submit the form data
+                    fetch('/submit-contact', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: new URLSearchParams(new FormData(form)),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Display the pop-up with the server's response
+                        updatePopupContent(data.message);
+                        popup.style.display = 'block';
+
+                        // Hide the pop-up after 3 seconds
+                        setTimeout(function() {
+                            popup.style.display = 'none';
+                        }, 3000);
+                    })
+                    .catch(error => console.error(error));
+                });
+
+                // Function to update the pop-up content
+                function updatePopupContent(content) {
+                    popup.innerHTML = content;
+                }
+            });

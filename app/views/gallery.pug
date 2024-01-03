@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    #fh5co-menus(data-section='gallery')
+        .container
+            .row.text-center.fh5co-heading.row-padded
+                h2 Gallery
+            .row.row-padded
+                each image in ['hotel-g1.png', 'hotel-g3.png', 'hotel-g4.png']
+                    .col-md-4
+                        .fh5co-food-menu.to-animate-2
+                            img.img-responsive(src=`images/${image}`, alt='Gallery Image')
+            .row.row-padded
+                each image in ['table-g4.png', 'table-g2.png', 'table-g5.png']
+                    .col-md-4
+                        .fh5co-food-menu.to-animate-2
+                            .fh5co-food-desc
+                                figure
+                                    img.img-responsive(src=`images/${image}`, alt='Gallery Image')
+            .row
+                each image in ['hotel-g5.png', 'table-g3.png', 'hotel-g2.png', 'table-g.png']
+                    .col-md-3
+                        .fh5co-food-menu.to-animate-2
+                            .fh5co-food-desc
+                                figure
+                                    img.img-responsive(src=`images/${image}`, alt='Gallery Image')
